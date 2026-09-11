@@ -1,5 +1,6 @@
-<!DOCTYPE htm>
+<!DOCTYPE html>
 <html>
+    <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
@@ -45,22 +46,59 @@
             margin: -3px;
         }
         
-        p {
+        .ptiktok {
             margin: 1px 15px;
-            font-size: 80%;
+            font-size: 80;
+            font-size: 13px;
+        }
+
+        .pwhatsapp {
+            margin: 1px 22px;
+            font-size: 13px;
+        }
+
+         @media (min-width: 769px) {
+        
+         .pwhatsapp {
+            margin: 1px 26px
+        }
+    }
+
+        .btn {
+            margin: 0px 20px
+        }
+
+        div {
+            display: flex;
+        }
+
+        .tiktok {
+            display: inline-block;
+        }
+
+        .whatsapp {
+            display: inline-block;
         }
     </style>
+    </head>
     <body>
         <h1>
-            Premium Apps
+            App Page
         </h1>
         <!-- <button><a href="https://www.tiktok.com" target="_blank">Tiktok</a></button -->
+        <div>
         
-        <a href="tiktok://"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
-        <!-- a hef="tiktok://">Tiktok<a/-->
-        
-        <p>Tiktok</p>
+        <div class="tiktok">
+            <a href="tiktok://"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
+            <p class="ptiktok">Tiktok</p>
+        </div>
+
+        <div class="whatsapp">
+            <a href="https://chat.whatsapp.com" target="_blank" class="btn"><img src="https://play-lh.googleusercontent.com/4LJ6f3U5wANt09KBlZ-F-YKooCQXTwHsa3vtTBFmsXWmNy-AdBEoHnWmyT0mGxh-1pQetlSoc9mIkRDJotQYbg=s512-rw"></a>
+            <p class="pwhatsapp">Whatsapp</p>
+        </div>
+
+        </div>
     <!--    <a href="tiktok://" class="clone"></a> -->
     </body>
 </html>
-
