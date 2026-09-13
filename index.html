@@ -264,6 +264,10 @@ body.video-loaded #loader-wrapper {
         .px {
             fon-size: 12px;
         }
+        
+        .pnas {
+            margin: 4px -30px;
+        }
 
         div {
             display: flex;
@@ -278,7 +282,7 @@ body.video-loaded #loader-wrapper {
         }
 
         .tiktok, .whatsapp, .removebg, .motionbgs, .uiverse, .tinywow, .subwaysf, .talkingtgr,
-         .X, .telegram, .snapchat, .roblox, .fb, .capcut, .ff {
+         .X, .telegram, .snapchat, .roblox, .fb, .capcut, .ff, .nas, .code, .python {
             display: inline-block;
             flex-direction: column;
             align-items: center;
@@ -288,6 +292,70 @@ body.video-loaded #loader-wrapper {
         .tiktok {
             isplay: inline-block;
         }
+        
+        @media screen and (max-width: 768px) {
+.tikmobile {
+display: inline-block;
+}
+
+.tikdesktop {
+display: none;
+}
+}
+
+@media screen and (min-width: 768px) {
+.tikmobile {
+display: none;
+}
+
+.tikdesktop {
+display: inline-block;
+}
+}
+
+.X {}
+
+@media screen and (max-width: 768px) {
+.xmobile {
+display: inline-block;
+}
+
+.xdesktop {
+display: none;
+}
+}
+
+@media screen and (min-width: 768px) {
+.xmobile {
+display: none;
+}
+
+.xdesktop {
+display: inline-block;
+}
+}
+
+.telegram {}
+
+@media screen and (max-width: 768px) {
+.tgmobile {
+display: inline-block;
+}
+
+.tgdesktop {
+display: none;
+}
+}
+
+@media screen and (min-width: 768px) {
+.tgmobile {
+display: none;
+}
+
+.tgdesktop {
+display: inline-block;
+}
+}
 
         .whatsapp {
             isplay: inline-block;
@@ -351,20 +419,24 @@ body.video-loaded #loader-wrapper {
         <!-- <button><a href="https://www.tiktok.com" target="_blank">Tiktok</a></button -->
         <div>
         
-        <div class="tiktok">
-            <a href="tiktok://"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
-            <p class="ptiktok">Tiktok</p>
-        </div>
+       <div class="tiktok">
+<a class="tikmobile" href="tiktok://" target="_blank"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
+<a class="tikdesktop" href="https://tiktok.com" target="_blank"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
+<p class="ptiktok">Tiktok</p>
+</div> 
 
-        <div class="X">
-            <a href="twitter://" target="_blank"><img src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
-            <p class="px">X</p>
-        </div>
+<div class="X">
+<a class="xmobile" href="twitter://" target="_blank"><img src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
+<a class="xdesktop" href="https://www.x.com" target="_blank"><img src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
+<p class="px">X</p>
+</div> 
 
-        <div class="telegram">
-            <a href="tg://" target="_blank"><img src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a>
-            <p class="ptelegram">Telegram</p>
-        </div>
+<div class="telegram">
+<a class="tgmobile" href="tg://" target="_blank"><img src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a>
+<a class="tgdesktop" href="https://webogram.org/a/" target="_blank"><img src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a> 
+
+<p class="ptelegram">Telegram</p>
+</div>
 
         <div class="whatsapp">
             <a href="https://chat.whatsapp.com" target="_blank" class="btn"><img src="https://play-lh.googleusercontent.com/4LJ6f3U5wANt09KBlZ-F-YKooCQXTwHsa3vtTBFmsXWmNy-AdBEoHnWmyT0mGxh-1pQetlSoc9mIkRDJotQYbg=s512-rw"></a>
@@ -424,6 +496,21 @@ body.video-loaded #loader-wrapper {
         <div class="roblox">
             <a href="roblox://" target="_blank"><img src="https://play-lh.googleusercontent.com/QqZj22aXblAyYDxLQw-Gg0ycW0QkKhrDnwqgERZU9BMRXZnMlgXfq-94sikG5mEpt_I0lzZxcUzfLblmQgwYzUE=s96-rw"></a>
             <p class="problox">Roblox</p>
+        </div>
+        
+        <div class="nas">
+            <a href="https://selar.com/p/88887f?affiliate=j6ot" target="_blank"><img src="https://play-lh.googleusercontent.com/ezMhYAKB3M-Xtmq8cFZ74W3RBvE6H43BnFB9KLmaVPs72Z-I7SBYZ3hGxgRJs8DS5FGJn0603lgjiBlqzqUk=s128-rw"></a>
+            <p class="pnas">Affiliate Program</p>
+        </div>
+        
+        <div class="code">
+            <a href="https://selar.com/p/2mz8i534p6?affiliate=qb7f"><img src="https://play-lh.googleusercontent.com/t5kf7eb_nAvhF5iiZ38hawd3To9eaFWLrZG6vuiFWANMoHn3fecApDIMf4siBGGCx8Tl0PfKvZnkiuU_hIUU=w480-h960-rw"></a>
+            <p class="pcode">Master Coding</p>
+        </div>
+        
+        <div class="python">
+            <a href="http://selar.com/53lb?affiliate=wg86"><img src="https://play-lh.googleusercontent.com/r4S493MrC-nHwQQhA0UdcnDGnPczT7xlRtyX4KFI8t-uf9wbOMYW7VCs24vI7BAm1JT9ALe5cWl9DHsr79KsIHQ=w480-h960-rw"></a>
+            <p class="ppython">Learn Python</p>
         </div>
 
         </div>
