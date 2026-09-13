@@ -25,7 +25,7 @@
             font-weight: 1;
             font-style:italic;
             font-tyle:oblique;
-            transition: color 0.5s ease;
+            transition: color 5s ease;
         }
 
         body.video-loaded h1 {
@@ -68,13 +68,14 @@
             font-weight: 1;
             color: rgb(221, 187, 15);
             font-family: "Rubik Wet Paint", system-ui;
-            display: none;
+            opacity: 0;
+            transition: opacity 7s;
         }
 
         body.video-loaded p {
             color: rgb(221, 187, 15);
-            display: block;
-        }
+            opacity: 1;
+            }
         
         .ptiktok {
             argin: 2px 12px;
@@ -112,6 +113,10 @@
             margin: 4px -8px;
         }
 
+        .px {
+            fon-size: 12px;
+        }
+
         div {
             display: flex;
             flex-wrap: wrap;
@@ -124,7 +129,8 @@
             adding: 6px;
         }
 
-        .tiktok, .whatsapp, .removebg, .motionbgs, .uiverse, .tinywow, .subwaysf, .talkingtgr {
+        .tiktok, .whatsapp, .removebg, .motionbgs, .uiverse, .tinywow, .subwaysf, .talkingtgr,
+         .X, .telegram, .snapchat, .roblox, .fb, .capcut, .ff {
             display: inline-block;
             flex-direction: column;
             align-items: center;
@@ -186,9 +192,29 @@
             <p class="ptiktok">Tiktok</p>
         </div>
 
+        <div class="X">
+            <a href="twitter://" target="_blank"><img src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
+            <p class="px">X</p>
+        </div>
+
+        <div class="telegram">
+            <a href="tg://" target="_blank"><img src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a>
+            <p class="ptelegram">Telegram</p>
+        </div>
+
         <div class="whatsapp">
             <a href="https://chat.whatsapp.com" target="_blank" class="btn"><img src="https://play-lh.googleusercontent.com/4LJ6f3U5wANt09KBlZ-F-YKooCQXTwHsa3vtTBFmsXWmNy-AdBEoHnWmyT0mGxh-1pQetlSoc9mIkRDJotQYbg=s512-rw"></a>
             <p class="pwhatsapp">Whatsapp</p>
+        </div>
+
+        <div class="snapchat">
+            <a href="snapchat://" target="_blank"><img src="https://play-lh.googleusercontent.com/nOJWJoDAzuRSHmlFfpzHXAj8UbTJwk_JGYf0uAPTKPtiiIX_2Y7r5ATO1ZtxHRqaFTqfIDZ40PnBK4hukeJh=w480-h960-rw"></a>
+            <p class="psnapchat">Snapchat</p>
+        </div>
+
+        <div class="fb">
+            <a href="fb://" target="_blank"><img src="https://play-lh.googleusercontent.com/12KEJDhgk6oyE1VgmfCuFzFrQripZ_endElbvEhU1rZawQgV3RI-v3II8fDslI1sdC_WKBkmtxS3jxuIihk33Q=w480-h960-rw"></a>
+            <p class="pfb">Facebook</p>
         </div>
 
         <div class="removebg">
@@ -211,6 +237,11 @@
             <p class="ptinywow">Tools</p>
         </div>
 
+        <div class="capcut">
+            <a href="capcut://" target="_blank"><img src="https://play-lh.googleusercontent.com/M78HyakHaxKrjoeqYx41E9DXfVYYtx67nvc7Ks4G4zFQeaAJdGCi8gzzGSrHIwlrmnJS6zD9S4fAXqdEwfuHQAQ=w480-h960-rw"></a>
+            <p class="pcapcut">CapCut</p> 
+        </div>
+
         <div class="subwaysf">
             <a href="https://poki.com/en/g/subway-surfers" target="_blank"><img src="https://play-lh.googleusercontent.com/T7az9M7td7A24vOr7Jp3C9NG16kyWA1NnlUySyl_mbDV9BtlrFbxps5TD5DzT7kCBxpNeTbIIju2_aFN4xtFoYM=s96-rw"></a>
             <p class="psubwaysf">Subway Surfers</p>
@@ -219,6 +250,16 @@
         <div class="talkingtgr">
             <a href="https://poki.com/en/g/talking-tom-gold-run" target="_blank"><img src="https://play-lh.googleusercontent.com/HympGTcpiPUnufrkfbRIdE6XoMvho7nAzvz-298nBWBzXD-ELedqBg0zoBanITrw7-yADZrQew1yOjAlYoBS=w480-h960-rw"></a>
             <p class="ptalkingtgr">Talking Tom Gold Run</p>
+        </div>
+
+        <div class="ff">
+            <a href="freefire://" target="_blank"><img src="https://play-lh.googleusercontent.com/JT88XmsHoGDio7FxONwh382DhuTxuccfMmWFDtRBFjilySzNqWOCxUhqm8IhBKzQSwVrW2HWp_XvSgKFwi3ETA=s96-rw"></a>
+            <p class="pff">Free Fire</p>
+        </div>
+
+        <div class="roblox">
+            <a href="roblox://" target="_blank"><img src="https://play-lh.googleusercontent.com/QqZj22aXblAyYDxLQw-Gg0ycW0QkKhrDnwqgERZU9BMRXZnMlgXfq-94sikG5mEpt_I0lzZxcUzfLblmQgwYzUE=s96-rw"></a>
+            <p class="problox">Roblox</p>
         </div>
 
         </div>
