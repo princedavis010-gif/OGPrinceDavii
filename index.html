@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://www.dropbox.com">
-        <link rel="dns-prefetch" href="https://www.dropbox.com">
-        <link rel="preload" href="https://www.dropbox.com/scl/fi/cez6800oxjvqwoft093z8/video.mp4?rlkey=nyu4e9hvpso65slezt4gypxoj&st=vqutsb30&e=2&raw=1" as="video" type="video/mp4">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Doodle+Shadow&family=Rubik+Glitch&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://www.dropbox.com">
+    <link rel="dns-prefetch" href="https://www.dropbox.com">
+    <link rel="preload"
+        href="https://www.dropbox.com/scl/fi/cez6800oxjvqwoft093z8/video.mp4?rlkey=nyu4e9hvpso65slezt4gypxoj&st=vqutsb30&e=2&raw=1"
+        as="video" type="video/mp4">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Doodle+Shadow&family=Rubik+Glitch&family=Rubik+Wet+Paint&display=swap"
+        rel="stylesheet">
     <style>
         body {
             backround-image: linear-gradient(to left, lightblue, lavender);
@@ -17,21 +22,21 @@
             argin: 0;
             padding: 0;
         }
-        
+
         h1 {
             text-align: center;
             font-family: "Rubik Glitch", system-ui;
             color: rgb(79, 73, 12);
             font-weight: 1;
-            font-style:italic;
-            font-tyle:oblique;
+            font-style: italic;
+            font-tyle: oblique;
             transition: color 5s ease;
         }
 
         body.video-loaded h1 {
             color: rgb(0, 0, 0);
         }
-        
+
         a {
             display: inline-block;
             -webkit-tap-highlight-color: transparent;
@@ -47,151 +52,165 @@
             padding: 3px 3px;
             font-size: 14px;
             transition: background 0.2s ease;
-      
-}
 
-#loader-wrapper {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #030712 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    z-index: 99999 !important;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-}
+        }
 
-body.video-loaded #loader-wrapper {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
+        #loader-wrapper {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #030712 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 99999 !important;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
 
-  
-.liquid-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  padding: 20px;
-  font-family: system-ui, sans-serif;
-}
+        body.video-loaded #loader-wrapper {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
 
-.loader-track {
-  position: relative;
-  width: 180px;
-  height: 32px;
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow:
-    inset 0 2px 4px rgba(0, 0, 0, 0.6),
-    0 1px 3px rgba(255, 255, 255, 0.1);
-}
 
-.liquid-fill {
-  position: absolute;
-  top: 2px;
-  lft: 2px;
-  riht: 2px;
-  height: calc(100% - 4px);
-  background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899, #f59e0b);
-  border-radius: 14px;
-  animation:
-    fillProgress 4s ease-out infinite,
-    colorShift 3s linear infinite;
-  box-shadow:
-    0 0 12px rgba(124, 58, 237, 0.4),
-    inset 0 1px 2px rgba(255, 255, 255, 0.2);
-}
+        .liquid-loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 20px;
+            font-family: system-ui, sans-serif;
+        }
 
-.loading-text {
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  animation: textGlow 1s ease-in-out infinite;
-}
+        .loader-track {
+            position: relative;
+            width: 180px;
+            height: 32px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow:
+                inset 0 2px 4px rgba(0, 0, 0, 0.6),
+                0 1px 3px rgba(255, 255, 255, 0.1);
+        }
 
-.dot {
-  margin-left: 3px;
-  animation: blink 1.5s infinite;
-}
-.dot:nth-of-type(1) {
-  animation-delay: 0s;
-}
-.dot:nth-of-type(2) {
-  animation-delay: 0.3s;
-}
-.dot:nth-of-type(3) {
-  animation-delay: 0.6s;
-}
+        .liquid-fill {
+            position: absolute;
+            top: 2px;
+            lft: 2px;
+            riht: 2px;
+            height: calc(100% - 4px);
+            background: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899, #f59e0b);
+            border-radius: 14px;
+            animation:
+                fillProgress 4s ease-out infinite,
+                colorShift 3s linear infinite;
+            box-shadow:
+                0 0 12px rgba(124, 58, 237, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.2);
+        }
 
-@keyframes fillProgress {
-  0% {
-    width: 4px;
-  }
-  25% {
-    width: 25%;
-  }
-  50% {
-    width: 50%;
-  }
-  75% {
-    width: 75%;
-  }
-  100% {
-    width: calc(96% - 4px);
-  }
-}
+        .loading-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            animation: textGlow 1s ease-in-out infinite;
+        }
 
-@keyframes colorShift {
-  0% {
-    filter: hue-rotate(0deg) brightness(1);
-  }
-  33% {
-    filter: hue-rotate(120deg) brightness(1.1);
-  }
-  66% {
-    filter: hue-rotate(240deg) brightness(0.9);
-  }
-  100% {
-    filter: hue-rotate(360deg) brightness(1);
-  }
-}
+        .dot {
+            margin-left: 3px;
+            animation: blink 1.5s infinite;
+        }
 
-@keyframes textGlow {
-  0%,
-  100% {
-    opacity: 0.7;
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
-  }
-  50% {
-    opacity: 1;
-    text-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
-  }
-}
+        .dot:nth-of-type(1) {
+            animation-delay: 0s;
+        }
 
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
+        .dot:nth-of-type(2) {
+            animation-delay: 0.3s;
+        }
+
+        .dot:nth-of-type(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fillProgress {
+            0% {
+                width: 4px;
+            }
+
+            25% {
+                width: 25%;
+            }
+
+            50% {
+                width: 50%;
+            }
+
+            75% {
+                width: 75%;
+            }
+
+            100% {
+                width: calc(96% - 4px);
+            }
+        }
+
+        @keyframes colorShift {
+            0% {
+                filter: hue-rotate(0deg) brightness(1);
+            }
+
+            33% {
+                filter: hue-rotate(120deg) brightness(1.1);
+            }
+
+            66% {
+                filter: hue-rotate(240deg) brightness(0.9);
+            }
+
+            100% {
+                filter: hue-rotate(360deg) brightness(1);
+            }
+        }
+
+        @keyframes textGlow {
+
+            0%,
+            100% {
+                opacity: 0.7;
+                text-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+            }
+
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
 
         a:hover {
             background: lightblue;
         }
-        
+
         a img {
             width: 60px;
             height: 60px;
@@ -204,9 +223,9 @@ body.video-loaded #loader-wrapper {
 
         }
 
-        p   {
+        p {
             margin: 4px 0 0;
-            font-size:10px;
+            font-size: 10px;
             text-align: center;
             white-space: nowrap;
             font-weight: 1;
@@ -214,7 +233,8 @@ body.video-loaded #loader-wrapper {
             -webkit-user-select: none;
             -webkit-touch-callout: none;
             text-shadow: black 1px 1px;
-            color: #yellow; rgb(221, 187, 15);
+            color: #yellow;
+            rgb(221, 187, 15);
             font-family: "Rubik Wet Paint", system-ui;
             opacity: 0;
             transition: opacity 7s;
@@ -223,8 +243,8 @@ body.video-loaded #loader-wrapper {
         body.video-loaded p {
             color: rgb(221, 187, 15);
             opacity: 1;
-            }
-        
+        }
+
         .ptiktok {
             argin: 2px 12px;
             font-size: 80;
@@ -238,18 +258,17 @@ body.video-loaded #loader-wrapper {
             margin: 4px -14px;
         }
 
-        .premovebg  {
+        .premovebg {
             argin: 2px 2px;
         }
 
-        .puiverse   {
+        .puiverse {
             argin: 2px 0px;
         }
 
-        .ptinywow   {
-        }
+        .ptinywow {}
 
-        .psubwaysf  {
+        .psubwaysf {
             margin: 4px -8px;
         }
 
@@ -264,7 +283,7 @@ body.video-loaded #loader-wrapper {
         .px {
             fon-size: 12px;
         }
-        
+
         .pnas {
             margin: 4px -30px;
         }
@@ -281,8 +300,24 @@ body.video-loaded #loader-wrapper {
             adding: 6px;
         }
 
-        .tiktok, .whatsapp, .removebg, .motionbgs, .uiverse, .tinywow, .subwaysf, .talkingtgr,
-         .X, .telegram, .snapchat, .roblox, .fb, .capcut, .ff, .nas, .code, .python {
+        .tiktok,
+        .whatsapp,
+        .removebg,
+        .motionbgs,
+        .uiverse,
+        .tinywow,
+        .subwaysf,
+        .talkingtgr,
+        .X,
+        .telegram,
+        .snapchat,
+        .roblox,
+        .fb,
+        .capcut,
+        .ff,
+        .nas,
+        .code,
+        .python {
             display: inline-block;
             flex-direction: column;
             align-items: center;
@@ -292,88 +327,132 @@ body.video-loaded #loader-wrapper {
         .tiktok {
             isplay: inline-block;
         }
-        
+
         @media screen and (max-width: 768px) {
-.tikmobile {
-display: inline-block;
-}
+            .tikmobile {
+                display: inline-block;
+            }
 
-.tikdesktop {
-display: none;
-}
-}
+            .tikdesktop {
+                display: none;
+            }
+        }
 
-@media screen and (min-width: 768px) {
-.tikmobile {
-display: none;
-}
+        @media screen and (min-width: 768px) {
+            .tikmobile {
+                display: none;
+            }
 
-.tikdesktop {
-display: inline-block;
-}
-}
+            .tikdesktop {
+                display: inline-block;
+            }
+        }
 
-.X {}
+        .X {}
 
-@media screen and (max-width: 768px) {
-.xmobile {
-display: inline-block;
-}
+        @media screen and (max-width: 768px) {
+            .xmobile {
+                display: inline-block;
+            }
 
-.xdesktop {
-display: none;
-}
-}
+            .xdesktop {
+                display: none;
+            }
+        }
 
-@media screen and (min-width: 768px) {
-.xmobile {
-display: none;
-}
+        @media screen and (min-width: 768px) {
+            .xmobile {
+                display: none;
+            }
 
-.xdesktop {
-display: inline-block;
-}
-}
+            .xdesktop {
+                display: inline-block;
+            }
+        }
 
-.telegram {}
+        .telegram {}
 
-@media screen and (max-width: 768px) {
-.tgmobile {
-display: inline-block;
-}
+        @media screen and (max-width: 768px) {
+            .tgmobile {
+                display: inline-block;
+            }
 
-.tgdesktop {
-display: none;
-}
-}
+            .tgdesktop {
+                display: none;
+            }
+        }
 
-@media screen and (min-width: 768px) {
-.tgmobile {
-display: none;
-}
+        @media screen and (min-width: 768px) {
+            .tgmobile {
+                display: none;
+            }
 
-.tgdesktop {
-display: inline-block;
-}
-}
+            .tgdesktop {
+                display: inline-block;
+            }
+        }
 
         .whatsapp {
             isplay: inline-block;
+        }
+
+        .snapchat {}
+
+        @media screen and (max-width: 768px) {
+            .snapmobile {
+                display: inline-block;
+            }
+
+            .snapdesktop {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .snapmobile {
+                display: none;
+            }
+
+            .snapdesktop {
+                display: inline-block;
+            }
+        }
+
+        .fb {}
+
+        @media screen and (max-width: 768px) {
+            .fbmobile {
+                display: inline-block;
+            }
+
+            .fbdesktop {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .fbmobile {
+                display: none;
+            }
+
+            .fbdesktop {
+                display: inline-block;
+            }
         }
 
         .removebg {
             isplay: inline-block;
         }
 
-        .motionbgs  {
+        .motionbgs {
             isplay: inline-block;
         }
 
-        .uiverse    {
+        .uiverse {
             isplay: inline-block;
         }
 
-        .tinywow    {
+        .tinywow {
             isplay: inline-block;
         }
 
@@ -390,66 +469,82 @@ display: inline-block;
             background-image: linear-gradient(135deg, #030712, #0f172a, #0f172a, #0c203b);
             object-position: 45% center;
         }
-
     </style>
-    </head>
-    <body>
+</head>
 
-        <video autoplay muted loop playsinline preload="auto"id="bg-video">
-            <source src="https://www.dropbox.com/scl/fi/9xbjr9euuvcdq5bsfrf2b/gojo-blue-eyes-jjk.1920x1080-1-1-1.mp4?rlkey=9iyx45oncksih5yzq7c74a475&st=ksmi8xxt&raw=1" type="video/mp4">
-            <sorce src="https://www.dropbox.com/scl/fi/cez6800oxjvqwoft093z8/video.mp4?rlkey=nyu4e9hvpso65slezt4gypxoj&st=vqutsb30&e=2&raw=1" type="video/mp4">
-        </video>
+<body>
 
-<div id="loader-wrapper">
-<div class="liquid-loader">
-  <div class="loading-text">
-    Loading<span class="dot">.</span><span class="dot">.</span
-    ><span class="dot">.</span>
-  </div>
+    <video autoplay muted loop playsinline preload="auto" id="bg-video">
+        <source
+            src="https://www.dropbox.com/scl/fi/9xbjr9euuvcdq5bsfrf2b/gojo-blue-eyes-jjk.1920x1080-1-1-1.mp4?rlkey=9iyx45oncksih5yzq7c74a475&st=ksmi8xxt&raw=1"
+            type="video/mp4">
+        <sorce
+            src="https://www.dropbox.com/scl/fi/cez6800oxjvqwoft093z8/video.mp4?rlkey=nyu4e9hvpso65slezt4gypxoj&st=vqutsb30&e=2&raw=1"
+            type="video/mp4">
+    </video>
 
-  <div class="loader-track">
-    <div class="liquid-fill"></div>
-  </div>
-</div>
-</div>
+    <div id="loader-wrapper">
+        <div class="liquid-loader">
+            <div class="loading-text">
+                Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+            </div>
 
-        <h1>
-            App Page
-        </h1>
-        <!-- <button><a href="https://www.tiktok.com" target="_blank">Tiktok</a></button -->
-        <div>
-        
-       <div class="tiktok">
-<a class="tikmobile" href="tiktok://" target="_blank"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
-<a class="tikdesktop" href="https://tiktok.com" target="_blank"><img src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
-<p class="ptiktok">Tiktok</p>
-</div> 
+            <div class="loader-track">
+                <div class="liquid-fill"></div>
+            </div>
+        </div>
+    </div>
 
-<div class="X">
-<a class="xmobile" href="twitter://" target="_blank"><img src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
-<a class="xdesktop" href="https://www.x.com" target="_blank"><img src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
-<p class="px">X</p>
-</div> 
+    <h1>
+        App Page
+    </h1>
+    <!-- <button><a href="https://www.tiktok.com" target="_blank">Tiktok</a></button -->
+    <div>
 
-<div class="telegram">
-<a class="tgmobile" href="tg://" target="_blank"><img src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a>
-<a class="tgdesktop" href="https://webogram.org/a/" target="_blank"><img src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a> 
+        <div class="tiktok">
+            <a class="tikmobile" href="tiktok://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
+            <a class="tikdesktop" href="https://tiktok.com" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/2o7iuqPe-0msP3DvNhzoOgNo4eZ6GkL_RtGVeKyBn5UBQAW5cw-GW5V3wDOHB1yTQuqWzrFLFOv2u4_5ea1uhg=w480-h960-rw"></a>
+            <p class="ptiktok">Tiktok</p>
+        </div>
 
-<p class="ptelegram">Telegram</p>
-</div>
+        <div class="X">
+            <a class="xmobile" href="twitter://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
+            <a class="xdesktop" href="https://www.x.com" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/IsLsCD4eLC2CYvlkgTI6Z5TROj0BJIBgUF7BZ5eliTzyyTjqG_mbofeG4kw2s7oG_JZMSi5ErLz_qsDi169C8w=s96-rw"></a>
+            <p class="px">X</p>
+        </div>
+
+        <div class="telegram">
+            <a class="tgmobile" href="tg://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a>
+            <a class="tgdesktop" href="https://webogram.org/a/" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/PyZ3akMGXPV0tKKirKNwfO--PSQW3FHR6rD_H9mAaukZ8LiHyYFuBLeU8UZ2ok6r5SP79-3prkfybWKh98AZAD0=w480-h960-rw"></a>
+
+            <p class="ptelegram">Telegram</p>
+        </div>
 
         <div class="whatsapp">
-            <a href="https://chat.whatsapp.com" target="_blank" class="btn"><img src="https://play-lh.googleusercontent.com/4LJ6f3U5wANt09KBlZ-F-YKooCQXTwHsa3vtTBFmsXWmNy-AdBEoHnWmyT0mGxh-1pQetlSoc9mIkRDJotQYbg=s512-rw"></a>
+            <a href="https://chat.whatsapp.com" target="_blank" class="btn"><img
+                    src="https://play-lh.googleusercontent.com/4LJ6f3U5wANt09KBlZ-F-YKooCQXTwHsa3vtTBFmsXWmNy-AdBEoHnWmyT0mGxh-1pQetlSoc9mIkRDJotQYbg=s512-rw"></a>
             <p class="pwhatsapp">Whatsapp</p>
         </div>
 
         <div class="snapchat">
-            <a href="snapchat://" target="_blank"><img src="https://play-lh.googleusercontent.com/nOJWJoDAzuRSHmlFfpzHXAj8UbTJwk_JGYf0uAPTKPtiiIX_2Y7r5ATO1ZtxHRqaFTqfIDZ40PnBK4hukeJh=w480-h960-rw"></a>
+            <a class="snapmobile" href="snapchat://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/nOJWJoDAzuRSHmlFfpzHXAj8UbTJwk_JGYf0uAPTKPtiiIX_2Y7r5ATO1ZtxHRqaFTqfIDZ40PnBK4hukeJh=w480-h960-rw"></a>
+            <a class="snapdesktop" href="https://snapchat.com" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/nOJWJoDAzuRSHmlFfpzHXAj8UbTJwk_JGYf0uAPTKPtiiIX_2Y7r5ATO1ZtxHRqaFTqfIDZ40PnBK4hukeJh=w480-h960-rw"></a>
             <p class="psnapchat">Snapchat</p>
         </div>
 
         <div class="fb">
-            <a href="fb://" target="_blank"><img src="https://play-lh.googleusercontent.com/12KEJDhgk6oyE1VgmfCuFzFrQripZ_endElbvEhU1rZawQgV3RI-v3II8fDslI1sdC_WKBkmtxS3jxuIihk33Q=w480-h960-rw"></a>
+            <a class="fbmobile" href="fb://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/12KEJDhgk6oyE1VgmfCuFzFrQripZ_endElbvEhU1rZawQgV3RI-v3II8fDslI1sdC_WKBkmtxS3jxuIihk33Q=w480-h960-rw"></a>
+            <a class="fbdesktop" href="https://www.facebook.com" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/12KEJDhgk6oyE1VgmfCuFzFrQripZ_endElbvEhU1rZawQgV3RI-v3II8fDslI1sdC_WKBkmtxS3jxuIihk33Q=w480-h960-rw"></a>
             <p class="pfb">Facebook</p>
         </div>
 
@@ -459,103 +554,116 @@ display: inline-block;
         </div>
 
         <div class="motionbgs">
-            <a href="https://motionbgs.com" target="_blank"><img src="https://cdn.statically.io/gh/princedavis010-gif/OGPrinceDavii/refs/heads/main/image.png"></a>
+            <a href="https://motionbgs.com" target="_blank">
+                <img
+                    src="image.png"></a>
             <p class="pmotionbgs">Live Wallpapers</p>
         </div>
 
         <div class="uiverse">
-            <a href="https://uiverse.io" target="_blank"><img src="https://cdn.statically.io/gh/princedavis010-gif/OGPrinceDavii/refs/heads/main/UIVerse.png"></a>
+            <a href="https://uiverse.io" target="_blank"><img
+                    src="https://cdn.statically.io/gh/princedavis010-gif/OGPrinceDavii/refs/heads/main/UIVerse.png"></a>
             <p class="puiverse">UI Elements</p>
         </div>
 
         <div class="tinywow">
-            <a href="https://tinywow.com" target="_blank"><img src="https://cdn.statically.io/gh/princedavis010-gif/OGPrinceDavii/refs/heads/main/tinywow.png"></a>
+            <a href="https://tinywow.com" target="_blank"><img
+                    src="https://cdn.statically.io/gh/princedavis010-gif/OGPrinceDavii/refs/heads/main/tinywow.png"></a>
             <p class="ptinywow">Tools</p>
         </div>
 
         <div class="capcut">
-            <a href="capcut://" target="_blank"><img src="https://play-lh.googleusercontent.com/M78HyakHaxKrjoeqYx41E9DXfVYYtx67nvc7Ks4G4zFQeaAJdGCi8gzzGSrHIwlrmnJS6zD9S4fAXqdEwfuHQAQ=w480-h960-rw"></a>
-            <p class="pcapcut">CapCut</p> 
+            <a href="capcut://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/M78HyakHaxKrjoeqYx41E9DXfVYYtx67nvc7Ks4G4zFQeaAJdGCi8gzzGSrHIwlrmnJS6zD9S4fAXqdEwfuHQAQ=w480-h960-rw"></a>
+            <p class="pcapcut">CapCut</p>
         </div>
 
         <div class="subwaysf">
-            <a href="https://poki.com/en/g/subway-surfers" target="_blank"><img src="https://play-lh.googleusercontent.com/T7az9M7td7A24vOr7Jp3C9NG16kyWA1NnlUySyl_mbDV9BtlrFbxps5TD5DzT7kCBxpNeTbIIju2_aFN4xtFoYM=s96-rw"></a>
+            <a href="https://poki.com/en/g/subway-surfers" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/T7az9M7td7A24vOr7Jp3C9NG16kyWA1NnlUySyl_mbDV9BtlrFbxps5TD5DzT7kCBxpNeTbIIju2_aFN4xtFoYM=s96-rw"></a>
             <p class="psubwaysf">Subway Surfers</p>
         </div>
 
         <div class="talkingtgr">
-            <a href="https://poki.com/en/g/talking-tom-gold-run" target="_blank"><img src="https://play-lh.googleusercontent.com/HympGTcpiPUnufrkfbRIdE6XoMvho7nAzvz-298nBWBzXD-ELedqBg0zoBanITrw7-yADZrQew1yOjAlYoBS=w480-h960-rw"></a>
+            <a href="https://poki.com/en/g/talking-tom-gold-run" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/HympGTcpiPUnufrkfbRIdE6XoMvho7nAzvz-298nBWBzXD-ELedqBg0zoBanITrw7-yADZrQew1yOjAlYoBS=w480-h960-rw"></a>
             <p class="ptalkingtgr">Talking Tom Gold Run</p>
         </div>
 
         <div class="ff">
-            <a href="freefire://" target="_blank"><img src="https://play-lh.googleusercontent.com/JT88XmsHoGDio7FxONwh382DhuTxuccfMmWFDtRBFjilySzNqWOCxUhqm8IhBKzQSwVrW2HWp_XvSgKFwi3ETA=s96-rw"></a>
+            <a href="freefire://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/JT88XmsHoGDio7FxONwh382DhuTxuccfMmWFDtRBFjilySzNqWOCxUhqm8IhBKzQSwVrW2HWp_XvSgKFwi3ETA=s96-rw"></a>
             <p class="pff">Free Fire</p>
         </div>
 
         <div class="roblox">
-            <a href="roblox://" target="_blank"><img src="https://play-lh.googleusercontent.com/QqZj22aXblAyYDxLQw-Gg0ycW0QkKhrDnwqgERZU9BMRXZnMlgXfq-94sikG5mEpt_I0lzZxcUzfLblmQgwYzUE=s96-rw"></a>
+            <a href="roblox://" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/QqZj22aXblAyYDxLQw-Gg0ycW0QkKhrDnwqgERZU9BMRXZnMlgXfq-94sikG5mEpt_I0lzZxcUzfLblmQgwYzUE=s96-rw"></a>
             <p class="problox">Roblox</p>
         </div>
-        
+
         <div class="nas">
-            <a href="https://selar.com/p/88887f?affiliate=j6ot" target="_blank"><img src="https://play-lh.googleusercontent.com/ezMhYAKB3M-Xtmq8cFZ74W3RBvE6H43BnFB9KLmaVPs72Z-I7SBYZ3hGxgRJs8DS5FGJn0603lgjiBlqzqUk=s128-rw"></a>
+            <a href="https://selar.com/p/88887f?affiliate=j6ot" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/ezMhYAKB3M-Xtmq8cFZ74W3RBvE6H43BnFB9KLmaVPs72Z-I7SBYZ3hGxgRJs8DS5FGJn0603lgjiBlqzqUk=s128-rw"></a>
             <p class="pnas">Affiliate Program</p>
         </div>
-        
+
         <div class="code">
-            <a href="https://selar.com/p/2mz8i534p6?affiliate=qb7f"><img src="https://play-lh.googleusercontent.com/t5kf7eb_nAvhF5iiZ38hawd3To9eaFWLrZG6vuiFWANMoHn3fecApDIMf4siBGGCx8Tl0PfKvZnkiuU_hIUU=w480-h960-rw"></a>
+            <a href="https://selar.com/p/2mz8i534p6?affiliate=qb7f" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/t5kf7eb_nAvhF5iiZ38hawd3To9eaFWLrZG6vuiFWANMoHn3fecApDIMf4siBGGCx8Tl0PfKvZnkiuU_hIUU=w480-h960-rw"></a>
             <p class="pcode">Master Coding</p>
         </div>
-        
+
         <div class="python">
-            <a href="http://selar.com/53lb?affiliate=wg86"><img src="https://play-lh.googleusercontent.com/r4S493MrC-nHwQQhA0UdcnDGnPczT7xlRtyX4KFI8t-uf9wbOMYW7VCs24vI7BAm1JT9ALe5cWl9DHsr79KsIHQ=w480-h960-rw"></a>
+            <a href="http://selar.com/53lb?affiliate=wg86" target="_blank"><img
+                    src="https://play-lh.googleusercontent.com/r4S493MrC-nHwQQhA0UdcnDGnPczT7xlRtyX4KFI8t-uf9wbOMYW7VCs24vI7BAm1JT9ALe5cWl9DHsr79KsIHQ=w480-h960-rw"></a>
             <p class="ppython">Learn Python</p>
         </div>
 
-        </div>
+    </div>
     <!--    <a href="tiktok://" class="clone"></a> -->
 
     <script>
-    const video = document.getElementById('bg-video');
-    
-    // Triggers the moment the video is ready to play
-    video.addEventListener('canplay', () => {
-        document.body.classList.add('video-loaded');
-    });
+        const video = document.getElementById('bg-video');
 
-document.querySelectorAll('a').forEach(link => {
-    const destination = link.getAttribute('href');
-    const targetAttr = link.getAttribute('target');
-    
-    if (destination) {
-        link.dataset.href = destination;
-        if (targetAttr) link.dataset.target = targetAttr;
-        link.removeAttribute('href'); // Strips the native link attribute to kill iOS preview
-        link.style.cursor = 'pointer';
-    }
+        // Triggers the moment the video is ready to play
+        video.addEventListener('canplay', () => {
+            document.body.classList.add('video-loaded');
+        });
 
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetUrl = link.dataset.href;
-        const targetType = link.dataset.target;
-        
-        if (targetUrl) {
-            if (targetType === '_blank') {
-                window.open(targetUrl, '_blank'); // Preserves new tab behavior
-            } else {
-                window.location.href = targetUrl; // Opens in the same tab
+        docment.querySelectorAll('a').forEach(link => {
+            const destination = link.getAttribute('href');
+            const targetAttr = link.getAttribute('target');
+
+            if (destination) {
+                link.dataset.href = destination;
+                if (targetAttr) link.dataset.target = targetAttr;
+                link.removeAttribute('href'); // Strips the native link attribute to kill iOS preview
+                link.style.cursor = 'pointer';
             }
-        }
-    });
 
-    link.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-    });
-});
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetUrl = link.dataset.href;
+                const targetType = link.dataset.target;
+
+                if (targetUrl) {
+                    if (targetType === '_blank') {
+                        window.open(targetUrl, '_blank'); // Preserves new tab behavior
+                    } else {
+                        window.location.href = targetUrl; // Opens in the same tab
+                    }
+                }
+            });
+
+            link.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+            });
+        });
 
 
-</script>
+    </script>
 
-    </body>
+</body>
+
 </html>
